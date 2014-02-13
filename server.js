@@ -5,7 +5,7 @@ var express = require('express'),
 
 var api = express()
   .get('/users/:username', function(req, res) {
-    res.send({username: req.params.username});
+    res.send({username: req.params.username, likes: ['choclate', 'vanilla', 'strawberry']});
   })
 
 var app = module.exports = express()
