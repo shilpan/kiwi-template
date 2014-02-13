@@ -23,7 +23,7 @@ var App = React.createClass({
     return (
       <html>
         <head>
-          <script src="/bundle.js" />
+          <script src="/init.js" />
         </head>
         <Pages ref="router" onClick={this.onClick} path={this.props.path}>
           <Page path="/" handler={MainPage} />
