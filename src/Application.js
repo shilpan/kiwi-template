@@ -8,7 +8,8 @@ var React = require('react'),
     Page = Router.Page
 
 var MainPage = require('./pages/MainPage'),
-    UserPage = require('./pages/UserPage')
+     UserPage = require('./pages/UserPage'),
+     SiteBoilerPlate = require('./views/SiteBoilerPlate');
 
 var App = React.createClass({
 
@@ -21,15 +22,12 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <html>
-        <head>
-          <script src="/init.js" />
-        </head>
+      <SiteBoilerPlate>
         <Pages ref="router" onClick={this.onClick} path={this.props.path}>
           <Page path="/" handler={MainPage} />
           <Page path="/users/:username" handler={UserPage} />
         </Pages>
-      </html>
+      </SiteBoilerPlate>
     );
   }
 });
