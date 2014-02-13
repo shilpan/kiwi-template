@@ -10,7 +10,7 @@ var Cortex = require('../../lib/cortex/cortex');
 var UserPage = ReactAsync.createClass({
 
   handleClick: function(e) {
-    this.props.data.get('username').set('shilpan');
+    this.props.data.get('username').set(this.props.data.get('username').getValue() === 'shilpan' ? 'andrey' : 'shilpan');
   },
 
   getInitialStateAsync: function(cb) {
@@ -22,14 +22,16 @@ var UserPage = ReactAsync.createClass({
   },
 
   render: function() {
-    this.props.data = new Cortex(this.state, function(updatedState) {
-      this.setState(this.props.data);
-    }.bind(this));
+    if (!this.props.data) {
+      this.props.data = new Cortex(this.state, function(updatedState) {
+        this.setState(this.props.data);
+      }.bind(this));
+    }
 
     return (
-      <div className="MainPage" onClick={this.handleClick}>
+      <div className="MainPage">
         {this.props.data.get('username') ? 'Hello, ' + this.props.data.get('username').getValue() : 'Loading...'}
-        <button type="button" onClick={this.handleClick}>click</button>
+        <button type="button" onClick={this.handleClick}>Toggle</button>
       </div>
     );
   }
