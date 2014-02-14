@@ -19,6 +19,7 @@ Quickstart:
 Compiling and live editing/compiling in absurd (currently live reload is pref'd off):
 
   % grunt css
+
 Start editing the absurd file, it will automatically be compiled into css
 
 TODOs:
