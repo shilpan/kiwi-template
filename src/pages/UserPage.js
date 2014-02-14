@@ -22,7 +22,7 @@ var UserPage = ReactAsync.createClass({
   },
 
   render: function() {
-    if (!this.props.data) {
+    if (!this.props.data && Object.keys(this.state).length != 0) {
       this.props.data = new Cortex(this.state, function(updatedState) {
         this.setState(this.props.data);
       }.bind(this));
@@ -30,7 +30,7 @@ var UserPage = ReactAsync.createClass({
 
     return (
       <div className="MainPage">
-        {this.props.data.get('username') ? 'Hello, ' + this.props.data.get('username').getValue() : 'Loading...'}
+        {this.props.data ? 'Hello, ' + this.props.data.get('username').getValue() : 'Loading...'}
         <button type="button" onClick={this.handleClick}>Toggle</button>
       </div>
     );
