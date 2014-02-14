@@ -1,6 +1,6 @@
 # Kiwi
 
-##React project template which combines:
+####React project template which combines:
 
   * react
   * react-router-component
@@ -10,18 +10,18 @@
   * absurd (css precompiler)
 
 
-##Quickstart:
+####Quickstart:
 
     % git clone https://github.com/shilpan/react-quickstart.git
     % npm install
     % node server.js
 
-##Compiling and live editing/compiling in absurd (currently live reload is pref'd off):
+####Compiling and live editing/compiling in absurd (currently live reload is pref'd off):
 
     % grunt css
 Start editing the absurd file, it will automatically be compiled into css
 
-##TODOs:
+####TODOs:
 
   * have a DEV and PROD environment
   * attach live reloading script while in DEV mode
