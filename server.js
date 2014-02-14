@@ -9,6 +9,7 @@ var api = express()
   })
 
 var app = module.exports = express()
+app.use(express.static(path.join(__dirname, 'src', 'res')));
 app.use('/api', api)
 app.use(middleware(path.resolve('./client')))
 

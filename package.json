@@ -15,14 +15,18 @@
     "react-router-component": "~0.2.1",
     "express": "~3.4.8",
     "node-jsx": "~0.2.1",
-    "superagent": "~0.16.0"
+    "superagent": "~0.16.0",
+    "absurd": "latest"
   },
   "devDependencies": {
     "reactify": "~0.7.0",
     "node-dev": "~2.1.6",
     "envify": "~0.2.0",
     "browserify": "~3.26.0",
-    "connect-browserify": "~1.0.0"
+    "connect-browserify": "~1.0.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "*",
+    "grunt-absurd": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
