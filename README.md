@@ -23,6 +23,7 @@ Start editing the absurd file, it will automatically be compiled into css
 
 ####TODOs:
 
+  * write tasks for automating minification, sourcemaps etc.
   * have a DEV and PROD environment
   * attach live reloading script while in DEV mode
   * defer bundle loading (figure out why it doesn't work with the current configuration)
