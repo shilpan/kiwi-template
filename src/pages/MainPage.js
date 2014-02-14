@@ -9,8 +9,10 @@ var MainPage = React.createClass({
   render: function() {
     return (
       <div className="UserPage">
-        Hello, anonynous!
-        <a href="/users/andrey">Login</a>
+        <img src="/images/nybl-green.png"/>
+        <p>Hello, anonynous!
+          <a href="/users/andrey">Login</a>
+        </p>
       </div>
     );
   }
