@@ -3,29 +3,29 @@ module.exports = function(grunt) {
     absurd: {
       css: {
         src: __dirname + '/src/absurd/index.css.js',
-        dest: __dirname + '/src/res/styles/styles.css'
+        dest: __dirname + '/src/res/styles/styles.css',
       },
       cssmin: {
         src: __dirname + '/src/absurd/index.css.js',
         dest: __dirname + '/src/res/styles/styles.min.css',
         options: {
-          minify: true
-        }
-      }
+          minify: true,
+        },
+      },
     },
     watch: {
       css: {
         files: [__dirname + '/src/absurd/**/*.css.js'],
         tasks: ['absurd'],
         options: {
-          livereload: false
-        }
-      }
-    }
+          livereload: false,
+        },
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-absurd');
 
   grunt.registerTask('css', ['absurd', 'watch']);
-}
+};
