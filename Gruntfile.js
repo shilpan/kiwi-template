@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: [ __dirname + '/src/absurd/**/*.js'],
+        files: [__dirname + '/src/absurd/**/*.css.js'],
         tasks: ['absurd'],
         options: {
           livereload: false
