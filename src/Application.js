@@ -2,25 +2,25 @@
  * @jsx React.DOM
  */
 
-var React = require('react'),
-    Router = require('react-router-component'),
-    Pages = Router.Pages,
-    Page = Router.Page
+var React = require('react');
+var Router = require('react-router-component');
+var Pages = Router.Pages;
+var Page = Router.Page;
 
-var MainPage = require('./pages/MainPage'),
-     UserPage = require('./pages/UserPage'),
-     SiteBoilerPlate = require('./views/SiteBoilerPlate');
+var MainPage = require('./pages/MainPage');
+var UserPage = require('./pages/UserPage');
+var SiteBoilerPlate = require('./views/SiteBoilerPlate');
 
 var App = React.createClass({
 
-  onClick: function(e) {
-    if (e.target.tagName === 'A') {
-      e.preventDefault();
-      this.refs.router.navigate(e.target.attributes.href.value);
+  onClick: function (event) {
+    if (event.target.tagName === 'A') {
+      event.preventDefault();
+      this.refs.router.navigate(event.target.attributes.href.value);
     }
   },
 
-  render: function() {
+  render: function () {
     return (
       <SiteBoilerPlate>
         <Pages ref="router" onClick={this.onClick} path={this.props.path}>

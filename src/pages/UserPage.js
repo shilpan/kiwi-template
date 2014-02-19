@@ -9,15 +9,15 @@ var Cortex = require('../../lib/cortex/cortex');
 
 var UserPage = ReactAsync.createClass({
 
-  handleClick: function(e) {
+  handleClick: function(event) {
     this.props.data.get('username').set(this.props.data.get('username').getValue() === 'shilpan' ? 'andrey' : 'shilpan');
   },
 
-  getInitialStateAsync: function(cb) {
+  getInitialStateAsync: function(callback) {
     superagent.get(
       'http://localhost:3000/api/users/' + this.props.username,
-      function(err, res) {
-        cb(err, res ? res.body : null);
+      function(error, result) {
+        callback(error, result ? result.body : null);
       });
   },
 
