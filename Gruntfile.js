@@ -1,13 +1,25 @@
-module.exports = function(grunt) {
-  grunt.initConfig({
+
+// Define all directory paths using ending slash "/"
+var src_dir = __dirname + '/src/';
+var src = {
+  absurd: src_dir + 'absurd/',
+};
+
+var bin_dir = __dirname + '/bin/';
+var bin = {
+  styles: bin_dir + 'styles/',
+};
+
+module.exports = function (grunt) {
+  var config = {
     absurd: {
       css: {
-        src: __dirname + '/src/absurd/index.css.js',
-        dest: __dirname + '/src/res/styles/styles.css',
+        src: src.absurd + 'index.css.js',
+        dest: bin.styles + 'styles.css',
       },
       cssmin: {
-        src: __dirname + '/src/absurd/index.css.js',
-        dest: __dirname + '/src/res/styles/styles.min.css',
+        src: src.absurd + 'index.css.js',
+        dest: bin.styles + 'styles.min.css',
         options: {
           minify: true,
         },
@@ -15,17 +27,19 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: [__dirname + '/src/absurd/**/*.css.js'],
+        files: [src.absurd + '**/*.css.js'],
         tasks: ['absurd'],
         options: {
           livereload: false,
         },
       },
     },
-  });
+  };
+
+  grunt.initConfig(config);
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-absurd');
 
-  grunt.registerTask('css', ['absurd', 'watch']);
+  grunt.registerTask('css', ['absurd']);
 };
