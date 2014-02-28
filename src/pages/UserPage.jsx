@@ -5,12 +5,12 @@
 var React = require('react');
 var ReactAsync  = require('react-async');
 var superagent  = require('superagent');
-var Cortex = require('../../lib/cortex/cortex');
+var Cortex = require('cortexjs');
 
 var UserPage = ReactAsync.createClass({
 
   handleClick: function(event) {
-    this.props.data.get('username').set(this.props.data.get('username').getValue() === 'shilpan' ? 'andrey' : 'shilpan');
+    this.props.data.username.set(this.props.data.username.getValue() === 'shilpan' ? 'andrey' : 'shilpan');
   },
 
   getInitialStateAsync: function(callback) {
@@ -30,7 +30,7 @@ var UserPage = ReactAsync.createClass({
 
     return (
       <div className="MainPage">
-        {this.props.data ? 'Hello, ' + this.props.data.get('username').getValue() : 'Loading...'}
+        {this.props.data ? 'Hello, ' + this.props.data.username.getValue() : 'Loading...'}
         <button type="button" onClick={this.handleClick}>Toggle</button>
       </div>
     );
